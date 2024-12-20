@@ -9,6 +9,10 @@ import java.util.List;
 @Service
 public class CityServiceImpl implements CityService{
 
+    public CityServiceImpl(CityRepository cityRepository) {
+        this.cityRepository = cityRepository;
+    }
+
     @Autowired
     private CityRepository cityRepository;
 

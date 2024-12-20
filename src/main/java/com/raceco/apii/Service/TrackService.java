@@ -9,5 +9,7 @@ public interface TrackService {
     Track getTrackById(Long trackId);
     List<Track> getTracksByCity(Long cityId);
     List<Track> getTracksByBranch(Long branchId);
+
+    List<Track> getAllTracks();
     void deleteTrack(Long trackId);
 }

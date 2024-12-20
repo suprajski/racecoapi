@@ -8,5 +8,7 @@ public interface EventService {
     Event addEvent(Event event);
     Event getEventById(Long eventId);
     List<Event> getEventsByTrack(Long trackId);
+
+    List<Event> getEventsByBranch(Long branchId);
     void deleteEvent(Long eventId);
 }

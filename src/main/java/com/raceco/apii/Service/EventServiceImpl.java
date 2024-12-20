@@ -30,6 +30,9 @@ public class EventServiceImpl implements EventService{
     }
 
     @Override
+    public List<Event> getEventsByBranch(Long branchId) {return  eventRepository.findByTrackBranchBranchId(branchId);}
+
+    @Override
     public void deleteEvent(Long eventId) {
         eventRepository.deleteById(eventId);
     }

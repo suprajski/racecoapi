@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/events")
 public class EventController {
@@ -27,6 +27,11 @@ public class EventController {
     @GetMapping("/track/{trackId}")
     public ResponseEntity<List<Event>> getEventsByTrack(@PathVariable Long trackId) {
         return ResponseEntity.ok(eventService.getEventsByTrack(trackId));
+    }
+
+    @GetMapping("/branch/{branchId}")
+    public ResponseEntity<List<Event>> getEventsByBranch(@PathVariable Long branchId) {
+        return ResponseEntity.ok(eventService.getEventsByBranch(branchId));
     }
 
     @DeleteMapping("/{eventId}")

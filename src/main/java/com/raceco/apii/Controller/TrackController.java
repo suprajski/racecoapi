@@ -1,5 +1,6 @@
 package com.raceco.apii.Controller;
 
+import com.raceco.apii.Entity.Branch;
 import com.raceco.apii.Entity.Track;
 import com.raceco.apii.Service.TrackService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/tracks")
 public class TrackController {
@@ -17,6 +18,11 @@ public class TrackController {
     @PostMapping
     public ResponseEntity<Track> addTrack(@RequestBody Track track) {
         return ResponseEntity.ok(trackService.addTrack(track));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Track>> getAllBranches() {
+        return ResponseEntity.ok(trackService.getAllTracks());
     }
 
     @GetMapping("/{trackId}")

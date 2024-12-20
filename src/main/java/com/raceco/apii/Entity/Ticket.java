@@ -31,5 +31,5 @@ public class Ticket {
     private Double price;
 
     @Column(nullable = false)
-    private String participationType; // e.g., 'VIP', 'Regular'
+    private String participationType;
 }
